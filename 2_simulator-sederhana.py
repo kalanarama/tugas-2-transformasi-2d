@@ -51,7 +51,6 @@ plt.fill(titik_lama[:,0], titik_lama[:,1], fill=False, edgecolor="teal", linewid
 plt.fill(titik_translasi[:,0], titik_translasi[:,1], fill=False, edgecolor="blue", linewidth=2, linestyle="--", label="Hasil Translasi")
 plt.fill(titik_rotasi[:,0], titik_rotasi[:,1], fill=False, edgecolor="red", linewidth=2, linestyle="--", label="Hasil Rotasi")
 plt.fill(titik_scaling[:,0], titik_scaling[:,1], fill=False, edgecolor="orange", linewidth=2, linestyle="--", label="Hasil Scaling")
-plt.scatter(pusat[0], pusat[1], color="purple", label="Titik Pusat Rotasi")
 
 plt.scatter(titik_lama[:,0], titik_lama[:,1], color="teal")
 plt.scatter(titik_translasi[:,0], titik_translasi[:,1], color="blue")
