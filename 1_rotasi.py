@@ -16,12 +16,15 @@ print("Titik awal:\n", titik_lama)
 print("\nTitik hasil rotasi:\n", titik_rotasi)
 
 # Grafik
-plt.fill(titik_lama[:,0], titik_lama[:,1], fill=False, edgecolor="skyblue", linewidth=10)
-plt.fill(titik_rotasi[:,0], titik_rotasi[:,1], fill=False, edgecolor="red", linewidth=2, linestyle="--")
+plt.figure(figsize=(10,6))
+plt.fill(titik_lama[:,0], titik_lama[:,1], fill=False, edgecolor="skyblue", linewidth=10, label="Persegi Awal")
+plt.fill(titik_rotasi[:,0], titik_rotasi[:,1], fill=False, edgecolor="red", linewidth=2, linestyle="--", label="Hasil Rotasi 90°")
 plt.axis("equal")
 plt.grid()
 plt.title("Rotasi Persegi")
 plt.xlabel("Sumbu X")
 plt.ylabel("Sumbu Y")
+plt.legend(loc="upper left", bbox_to_anchor=(1, 1))
+plt.tight_layout()
 plt.show()
 
