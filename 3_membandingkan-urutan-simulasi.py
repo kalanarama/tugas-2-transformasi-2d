@@ -46,6 +46,29 @@ plt.scatter(titik_lama[:,0], titik_lama[:,1], color="teal")
 plt.scatter(titik_scaling_1[:,0], titik_scaling_1[:,1], color="red")
 plt.scatter(titik_translasi_2[:,0], titik_translasi_2[:,1], color="blue")
 
+# Menampilkan titik koordinat
+nama_titik = ["A", "B", "C"]
+
+for i in range(3):
+    # Titik segitiga awal
+    x, y = np.round(titik_lama[i], 2)
+    plt.annotate(f"{nama_titik[i]}({x:g},{y:g})",
+                 (x, y), xytext=(5, 7),
+                 textcoords="offset points", color="teal", fontsize=9)
+
+    # Titik hasil Translasi - Rotasi - Scaling
+    x, y = np.round(titik_scaling_1[i], 2)
+    plt.annotate(f"{nama_titik[i]}({x:g},{y:g})",
+                 (x, y), xytext=(5, 7),
+                 textcoords="offset points", color="red", fontsize=9)
+
+    # Titik hasil Scaling - Rotasi - Translasi
+    x, y = np.round(titik_translasi_2[i], 2)
+    plt.annotate(f"{nama_titik[i]}({x:g},{y:g})",
+                 (x, y), xytext=(5, 7),
+                 textcoords="offset points", color="blue", fontsize=9)
+
+
 plt.title("Perbandingan Urutan Transformasi 2D")
 plt.xlabel("Sumbu X")
 plt.ylabel("Sumbu Y")

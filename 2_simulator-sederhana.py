@@ -58,6 +58,37 @@ plt.scatter(titik_rotasi[:,0], titik_rotasi[:,1], color="red")
 plt.scatter(titik_scaling[:,0], titik_scaling[:,1], color="orange")
 plt.scatter(pusat[0], pusat[1], color="purple", label="Titik Pusat Rotasi")
 
+# Menampilkan titik koordinatnya
+for i in range(total_vertex):
+    nama = chr(65+i) if i < 26 else f"V{i+1}"
+
+    # Poligon awal
+    x, y = np.round(titik_lama[i], 2)
+    plt.annotate(f"{nama}({x:g},{y:g})",
+                 (x,y), xytext=(5,-15),
+                 textcoords="offset points", color="teal", fontsize=8)
+
+    # Hasil translasi
+    x, y = np.round(titik_translasi[i], 2)
+    plt.annotate(f"{nama}({x:g},{y:g})",
+                 (x,y), xytext=(5,7),
+                 textcoords="offset points", color="blue", fontsize=8)
+
+    # Hasil rotasi
+    x, y = np.round(titik_rotasi[i], 2)
+    plt.annotate(f"{nama}({x:g},{y:g})",
+                 (x,y), xytext=(-55,7),
+                 textcoords="offset points", color="red", fontsize=8)
+
+    # Hasil scaling
+    x, y = np.round(titik_scaling[i], 2)
+    plt.annotate(f"{nama}({x:g},{y:g})",
+                 (x,y), xytext=(-55,-15),
+                 textcoords="offset points", color="orange", fontsize=8)
+
+
+
+
 plt.title("Simulator Transformasi 2D")
 plt.xlabel("Sumbu X")
 plt.ylabel("Sumbu Y")
